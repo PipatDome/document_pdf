@@ -1,0 +1,324 @@
+<div id="print-section3" class="d-none">
+  <div class="content">
+      <table class="invoice2">
+          <thead align="center">
+              <tr>
+                  <td class="mb-2">
+                      <img src="./assets/images/print-logo.png" alt="logo"
+                          width="75" height="100">
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label
+                          class="text-header">หนังสือรับรองการแจ้ง</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label
+                          class="text-header">จัดตั้งสถานที่จำหน่ายอาหาร
+                          หรือสะสมอาหาร</label>
+                  </td>
+              </tr>
+          </thead>
+      </table>
+      <table>
+          <tbody>
+              <tr>
+                  <td width="65%">
+                      <label class="text-body">หนังสือรับรองเลขที่</label>
+                      <label class="text-body">..{{form_number}}..</label>
+                      <label class="text-body">/</label>
+                      <label class="text-body">..{{form_year}}</label>
+                  </td>
+                  <td align="right">
+                      <label
+                          class="text-body">สำนักงานเทศบาลตำบลบ้านคลอง</label>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+      <table class="invoice" *ngIf="form.person_type=='บุคคลธรรมดา'">
+          <tr>
+              <label class="text-body-input"><span
+                      class="tab"></span>เจ้าพนักงานท้องถิ่นออกแบบหนังสือรับรองให้</label>
+              <label class="text-body-input"><span class="tab3"></span>( /
+                  )<span class="tab3"></span>บุคคลธรรมดา<span
+                      class="tab3"></span>(<span
+                      class="tab2"></span>)<span
+                      class="tab3"></span>นิติบุคคล</label>
+          </tr>
+      </table>
+      <table class="invoice" *ngIf="form.person_type=='นิติบุคคล'">
+          <tr>
+              <label class="text-body-input"><span
+                      class="tab"></span>เจ้าพนักงานท้องถิ่นออกแบบหนังสือรับรองให้</label>
+              <label class="text-body-input"><span
+                      class="tab3"></span><span class="tab3"></span>(<span
+                      class="tab2"></span>)<span
+                      class="tab3"></span>บุคคลธรรมดา
+                  <span class="tab3"></span>( / )<span
+                      class="tab3"></span>นิติบุคคล</label>
+          </tr>
+      </table>
+      <table class="invoice">
+          <tr>
+              <label
+                  class="text-body-input">ชื่อ...........{{form.fname}}....{{form.name}}.................................</label>
+              <label
+                  class="text-body-input">อายุ..........{{form.age}}.........ปี</label>
+
+              <label class="text-body-input"><span
+                      class="tab3"></span>สัญชาติ......{{form.nation}}.......</label>
+              <label class="text-body-input">
+              </label>
+          </tr>
+      </table>
+      <table class="invoice" *ngIf="form.person_type=='บุคคลธรรมดา'">
+          <tr>
+              <td>
+                  <label
+                      class="text-body-input">เลขประจำตัวประชาชนเลขที่.........{{form.people_id}}..................</label>
+                  <label
+                      class="text-body-input">อยู่บ้าน/สำนักงานเลขที่........{{form.banlekthi}}.......</label>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label
+                      class="text-body-input">ตรอก/ซอย.........{{form.soi}}..............ถนน...........{{form.road}}........หมู่ที่...{{form.moo}}...แขวง/ตำบล...{{form.tambol}}...</label>
+
+              </td>
+          </tr>
+      </table>
+      <table class="invoice" *ngIf="form.person_type=='นิติบุคคล'">
+          <tr>
+              <td>
+                  <label
+                      class="text-body-input">เลขทะเบียนนิติบุคคลเลขที่.........{{form.people_id}}..................</label>
+                  <label
+                      class="text-body-input">อยู่บ้าน/สำนักงานเลขที่........{{form.banlekthi}}.......</label>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label
+                      class="text-body-input">ตรอก/ซอย.........{{form.soi}}..............ถนน...........{{form.road}}........หมู่ที่...{{form.moo}}...แขวง/ตำบล...{{form.tambol}}...</label>
+
+              </td>
+          </tr>
+      </table>
+      <table class="invoice">
+          <tr>
+              <td>
+                  <label
+                      class="text-body-input">เขตุ/อำเภอ........{{form.amphoe}}................</label>
+                  <label
+                      class="text-body-input">จังหวัด..........{{form.province}}...........โทรศัพท์..................{{form.tel}}...............</label>
+              </td>
+          </tr>
+      </table>
+      <table class="invoice">
+          <tr>
+              <label class="text-body-input"><span class="tab"></span>1.
+                  จัดตั้งสถานที่จำหน่ายอาหารประเภท..........{{form.place_type}}..({{form.place_type_detail}}).............
+              </label><br>
+              <label
+                  class="text-body-input">สถานที่ชื่อ......{{form.place_name}}...............</label>
+              <label
+                  class="text-body-input">พื้นที่ประกอบการ.........{{form.place_all}}...............ตารางเมตร</label><br>
+          </tr>
+      </table>
+      <table class="invoice">
+          <tr>
+              <label class="text-body-input"><span class="tab"></span>2.
+                  ตั้งอยู่เลขที่......{{form.place_banlekthi}}.......ตรอก/ซอย....{{form.place_soi}}....ถนน....{{form.place_road}}....หมู่ที่....{{form.place_moo}}....ตำบล.......{{form.place_tambol}}.......
+              </label><br>
+              <label
+                  class="text-body-input">อำเภอ.........{{form.place_amphoe}}...........จังหวัด............{{form.place_province}}...............</label>
+              <label
+                  class="text-body-input">โทรศัพท์..................{{form.place_tel}}...............</label><br>
+          </tr>
+          <tr>
+              <label class="text-body-input">
+                  ค่าธรรมเนียมฉบับละ.......{{form.price}}........บาทต่อปี
+                  ใบเสร็จรับเงินเลขที่..........................................................................
+              </label><br>
+          </tr>
+      </table>
+      <table class="invoice">
+          <tr>
+              <label class="text-body-input"><span class="tab"></span>3.
+                  ผู้ได้รับหนังสือรับรองการแจ้งต้องปฏิบัติตามเงื่อนไงดังต่อไปนี้
+              </label><br>
+              <label class="text-body-input"><span class="tab"></span>3.1
+                  ผู้รับหนังสือรับรองการแจ้งต้องปฏิบัติตามหลักเกณฑ์
+                  วิธีการและเงื่อนไขที่กำหนดใในข้อบัญญัติท้องถิ่น</label><br>
+              <label class="text-body-input"><span class="tab"></span>3.2
+                  ประกอบกิจการไม่ก่อให้เกิดเหตุเดือดร้อนรำคาญแก่ผู้อื่น
+              </label>
+          </tr>
+      </table>
+      <table class="invoice2">
+          <tr>
+              <label class="text-body-input"><span
+                      class="tab"></span>ออกให้....ณ.....วันที่........{{print_day}}.........เดือน........{{print_month}}..........พ.ศ........{{print_year}}.............</label>
+          </tr>
+      </table>
+      <table>
+          <tbody>
+              <tr>
+                  <td width="65%" colspan="2">
+                  </td>
+                  <td colspan="2" align="left">
+                      <label class="text-body-input"> &nbsp; &nbsp; &nbsp;
+                          &nbsp;
+                          (ลงชื่อ)........................................</label><br>
+                      <label class="text-body-input">&nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; (นายพิทักษ์
+                          วิจิตรพงษา)</label><br>
+                      <label class="text-body-input"> &nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          เจ้าพนักงานท้องถิ่น</label>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <table>
+          <tbody>
+              <tr>
+                  <td width="10%" colspan="2">
+                      <label class="text-body-input2">คำเตือน</label>
+                  </td>
+                  <td colspan="2" align="left">
+                      <label class="text-body-input2">(1)
+                          ผู้รับหนังสือรับรองการแจ้งต้องแสดงหนังสือรับรองการแจ้งนี้
+                          ไว้โดยเปิดเผยและเห็นได้ง่าย
+                          ณ สถานที่ประกอบ
+                      </label>
+                  </td>
+              </tr>
+              <tr>
+                  <td width="10%" colspan="2"></td>
+                  <td colspan="2" align="left">
+                      <label class="text-body-input2"> &nbsp; &nbsp;
+                          &nbsp;กิจการตลอดเวลาที่ประกอบกิจการ
+                          หากฝ่าฝืนมีโทษปรับไม่เกินห้าร้อยบาท
+                      </label>
+                  </td>
+              </tr>
+              <tr>
+                  <td width="10%" colspan="2"></td>
+                  <td colspan="2" align="left">
+                      <label class="text-body-input2">(2)
+                          ผู้รับผิดชอบหนังสือรับรองการแจ้งนี้ต้องเสียค่าธรรมเนียม
+                          ต่อราชการส่วนท้องถิ่นทุกปีตามกำหนดเวลาหากฝ่าฝืนจะต้อง</label>
+                  </td>
+              </tr>
+              <tr>
+                  <td width="10%" colspan="2"></td>
+                  <td colspan="2" align="left">
+                      <label class="text-body-input2"> &nbsp; &nbsp;
+                          &nbsp;เสียค่าปรับเพิ่มอีก
+                          ร้อยละยี่สิบของค่าธรรมเนียมที่ค้างชำระ
+                      </label>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <table class="invoice">
+          <tbody>
+              <label
+                  class="text-body-input">รายการต่ออายุใบอนุญาตและเสียค่าธรรมเนียม</label>
+          </tbody>
+      </table>
+
+      <table class="invoice3">
+          <tbody align="center">
+              <tr>
+                  <th class="sr" width="20%">
+                      <label class="text-body-input2">วัน/เดือน/ปี</label>
+                  </th>
+                  <td class="ss" width="30%" colspan="2">
+                      <label
+                          class="text-body-input2">ใบเสร็จรับเงิน</label>
+                  </td>
+                  <td width="20%">
+                      <label class="text-body-input2">(ลงชื่อ)</label>
+                  </td>
+              </tr>
+              <tr>
+                  <th class="sr">
+                      <label
+                          class="text-body-input2">ที่ครบกำหนดชำระ</label>
+                  </th>
+                  <td class="sr">
+                      <label
+                          class="text-body-input2">ใบเสร็จรับเงินเลขที่</label>
+                  </td>
+                  <td class="sr">
+                      <label class="text-body-input2">วัน/เดือน/ปี</label>
+                  </td>
+                  <td>
+                      <label
+                          class="text-body-input2">เจ้าพนักงานท้องถิ่น</label>
+                  </td>
+              </tr>
+              <tr>
+                  <th class="sr">
+                      <label class="text-body-input2">ค่าธรรมเนียม</label>
+                  </th>
+                  <td class="sr">
+                  </td>
+                  <td class="sr">
+                  </td>
+                  <td>
+                  </td>
+              </tr>
+              <tr class="ss">
+                  <th class="ss"> <label
+                          class="text-body-input2">{{next_year}}</label>
+                  </th>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+              </tr>
+              <tr class="ss">
+                  <th class="ss"> <label
+                          class="text-body-input2">{{next_year2}}</label>
+                  </th>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+              </tr>
+              <tr class="ss">
+                  <th class="ss"> <label
+                          class="text-body-input2">{{next_year3}}</label>
+                  </th>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+              </tr>
+              <tr class="ss">
+                  <th class="ss"> <label
+                          class="text-body-input2">{{next_year4}}</label>
+                  </th>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+              </tr>
+              <tr class="ss">
+                  <th class="ss"> <label
+                          class="text-body-input2">{{next_year5}}</label>
+                  </th>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+                  <td class="ss"></td>
+              </tr>
+          </tbody>
+      </table>
+
+  </div>
+</div>

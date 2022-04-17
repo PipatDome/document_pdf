@@ -1,0 +1,129 @@
+<div style="margin-left:45%;">
+  <button printSectionId="op_SI_2" ngxPrint>Export Page to PDF</button> 
+</div>
+<div class="page" id="op_SI_2">
+  <div class="text-center"style="text-align: center">
+    <img src="assets/image/logo1.png" class="rounded" alt="logo" width="80" height="70">
+    <img src="assets/image/logo2.png" class="rounded" alt="logo" width="100" height="90">
+  </div>
+  <h4 style="text-align:center;">ใบรับรองแพทย์กรณีผู้ติดเชื้อโควิด-19</h4>
+  <h5>ส่วนที่1 ผู้ขอใบรับรองแพทย์เป็นผู้กรอก</h5>
+  <div style="font-size: 14px;">
+    <div class="col-12">
+        ข้าพเจ้า {{name}} {{lastname}} หมายเลขบัตรประชาชน {{card_id}} 
+    </div>
+    <div class="col-12">
+      สถานที่อยู่ (ที่สามารถติดต่อได้) {{address}}
+    </div>
+    ข้าพเจ้าขอให้การยืนยันประวัติดังนี้
+    <div class="row">
+      <div class="col">
+        ได้รับการตรวจ ATK 
+        <label class="form-check-label " for="flexRadioDefault2">
+          <input class="form-check-input m-1 " type="checkbox" value="" id="flexRadioDefault2" checked>
+          ด้วยตนเอง
+        </label>
+        <label class="form-check-label" for="flexCheckChecked">
+          <input class="form-check-input m-1" type="checkbox" value="" id="flexCheckChecked" >
+          ที่สถานพยาบาลชื่อ {{hospital}}
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      เมื่อวันที่ {{  date_ATK }} และมีผลเป็นบวก (ติดเชื้อ)
+    </div>
+    <div class="row">
+      <div class="col">
+        1.ได้รับการกักตัวแบบ Home isolation (HI) ภายใต้การดูแลของศูนย์บริการสาธารณสุขพุทธบูชา สำนักงานสาธารณสุขจังหวัดพิษณุโลก
+        ระหว่างวันที่ {{ date_Owsi_f }} ถึง {{ date_Owsi_e }} รวมทั้งสิ้นเป็นระยะเวลา {{ day_Owsi }} วัน
+      </div>
+    </div>
+    2.ประวัติอื่นที่สำคัญ {{ other_history }}
+    <div class="row" style="margin-left: 5px;">   
+      หมายเหตุ:
+      <div class="col-sm-12">
+        (1) ในกรณีที่ไม่สามารถให้ข้อมูลหรือลงนามรับรองด้วยตนเองได้ ให้ผู้มีอำนาจตามกฎหมาย หรือผู้ปกครองลงนามรับรองแทนได้
+      </div>
+      <div class="col-sm-12">
+        (2) กรณีให้ข้อมูลอันเป็นเท็จ อาจได้รับโทษตามกฎหมายที่เกี่ยวข้อง
+      </div>
+    </div>
+  </div>
+  <h5>ส่วนที่ 2 แพทย์เป็นผู้กรอก</h5>
+  <div style="font-size: 14px;">
+    <div class="col-12">
+      สถานที่ตรวจ ศูนย์บริการสาธารณสุขพุทธบูชา สำนักงานสาธารณสุขจังหวัดพิษณุโลก วันที่  {{ date_part_2 }}
+    </div>
+    <div class="col-12">
+      ข้าพเจ้า {{ name_doctor }}   ใบอนุญาตประกอบวิชาชีพเลขที่ {{ professional_license }}
+    </div>
+    <div class="col-12">
+      ปฏิบัติงานภายใต้ ศูนย์บริการสาธารณสุขพุทธบูชา สำนักงานสาธารณสุขจังหวัดพิษณุโลก ขอรับรองว่า
+    </div>
+    (นาย/นาง/นางสาว) {{name}} {{lastname}}
+    <div class="col-12">
+      1. ได้รับการตรวจโรคโควิด-19 ด้วยวิธี 
+      <label class="form-check-label " for="flexRadioDefault_p2">
+          <input class="form-check-input m-1 " type="checkbox" value="" id="flexRadioDefault_p2" >
+          ATK ด้วยตนเอง
+        </label>
+        <label class="form-check-label" for="flexCheckChecked_p2">
+          <input class="form-check-input m-1" type="checkbox" value="" id="flexCheckChecked_p2" >
+          RT PCR  โดยบุคลากรของสถานพยาบาล
+        </label>
+    </div>
+    <div class="col-12">
+      เมื่อวันที่ {{ date_doctor_check }} และปรากฏผลเป็นบวก
+    </div>
+    2. ณ วันที่มาเข้ารับการตรวจโควิด-19 ดังกล่าว ผู้มาขอใบรับรองการตรวจ
+    <div class="col-12">
+      <label class="form-check-label " for="not_sickness">
+        <input class="form-check-input m-1 " type="checkbox" value="" id="not_sickness" >
+        ไม่มีอาการและอาการแสดง ( Asymptomatic ) ของโรคโควิด-19
+      </label>
+    </div>
+    <div class="col-12">
+      <label class="form-check-label " for="danger_sickness">
+        <input class="form-check-input m-1 " type="checkbox" value="" id="danger_sickness" >
+        มีอาการหรืออาการแสดงของโรคโควิด-19 ดังนี้ {{ have_Asymptomatic }}
+      </label>
+    </div>
+    <div class="col-12">
+      3. ผู้ติดเชื้อได้รับการรักษาภายใต้การจัดการของ ศูนย์บริการสาธารณสุขพุทธบูชา สำนักงานสาธารณสุขจังหวัดพิษณุโลก แบบ Home isolation (HI)  
+      ระหว่างวันที่ {{ date_Owsi_f_part_2 }} ถึง {{  date_Owsi_e_part_2 }}
+    </div>
+    <h5>สรุปความคิดเห็นของแพทย์</h5>
+    <div class="col-12">
+      <label class="form-check-label " for="atk_for_doctor">
+        <input class="form-check-input m-1 " type="checkbox" value="" id="atk_for_doctor" >
+        ผู้มาขอใบรับรองได้รับการตรวจยืนยันการติดเชื้อ “ภายใต้สถานพยาบาล”และยืนยันว่ามีการติดเชื้อโควิด-19 จริง
+      </label>
+    </div>
+    <div class="col-12">
+      <label class="form-check-label " for="Outpatient_with_self_isolation">
+        <input class="form-check-input m-1 " type="checkbox" value="" id="Outpatient_with_self_isolation" >
+        ผู้ติดเชื้อได้รับการดูแลรักษาไม่น้อยกว่า 10 วันนับจากวันที่เริ่มมีอาการหรือวันที่มีการตรวจพบเชื้อ          
+        ซึ่งตามแนวทางการรักษาของกรมการแพทย์ ถือว่าผู้ป่วยพ้นระยะการแพร่เชื้อแล้ว ( ไม่จำเป็นต้องได้รับการตรวจหา
+        เชื้อด้วยวิธีการใดๆเพื่อยืนยัน)
+
+      </label>
+    </div>
+    <div class="col-12">
+      <label class="form-check-label " for="infect_less_10">
+        <input class="form-check-input m-1 " type="checkbox" value="" id="infect_less_10" >
+        ผู้ป่วยติดเชื้อโควิด-19 จำเป็นต้องรักษาในรพ. แต่เนื่องจาก รพ.ไม่มีเตียงเพียงพอจึงได้รับการรักษาที่บ้านแบบ HI ระหว่างรอเตียงในโรงพยาบาล
+      </label>
+    </div>
+    <div style="margin-left:50%;margin-top: 10%;">
+      <label class="text-body-input"> &nbsp; &nbsp; &nbsp;
+          &nbsp;
+          (ลงชื่อ)........................................แพทย์ผู้ตรวจ</label><br>
+      <label class="text-body-input">&nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp; ({{ name_doctor }})</label><br>
+    </div>
+    <div style="margin-bottom: 2%;font-size: 10px;margin-top: 5%;">
+      หมายเหตุ ใบรับรองแพทย์ต้องออกภายใต้สถานพยาบาล (คลินิก/รพ.รัฐ/รพ.เอกชน)และต้องสามารถตรวจสอบย้อนหลังได้
+    </div>
+
+  </div>
+</div> 
